@@ -22,11 +22,10 @@
 
 | Column        | Type       | Options                         |
 | ------------- | ---------- | ------------------------------- |
-| user_id       | string     | null: false, foreign_key: true  |
+| user_id       | references | null: false, foreign_key: true  |
 | image         | string     | null: false                     |
 | price         | integer    | null: false                     |
 | shipping_cost | string     | null: false                     |
-| seller        | string     | null: false                     |
 | category      | integer    | null: false                     |
 | status        | string     | null: false                     |
 | shipping_area | string     | null: false                     |
@@ -41,7 +40,7 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| user_id      | string     | null: false, foreign_key: true |
+| user_id      | references | null: false, foreign_key: true |
 | item_id      | references | null: false, foreign_key: true |
 
 ### Association
@@ -59,7 +58,7 @@
 | city               | string     | null: false                    |
 | house_number       | string     | null: false                    |
 | building_name      | string     |                                |
-| phone_number       | integer    | null: false, foreign_key: true |
+| phone_number       | string     | null: false                    |
 | purchase_record_id | references | foreign_key: true              |
 
 ### Association
