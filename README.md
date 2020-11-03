@@ -30,6 +30,7 @@
 | shipping_area_id | integer    | null: false                     |
 | shipping_day_id  | integer    | null: false                     |
 | name             | string     | null: false                     |
+| description      | text       | null: false                     |
 
 ### Association
 
