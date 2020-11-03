@@ -29,6 +29,7 @@
 | status_id        | integer    | null: false                     |
 | shipping_area_id | integer    | null: false                     |
 | shipping_day_id  | integer    | null: false                     |
+| name             | string     | null: false                     |
 
 ### Association
 
@@ -58,7 +59,7 @@
 | house_number       | string     | null: false                    |
 | building_name      | string     |                                |
 | phone_number       | string     | null: false                    |
-| purchase_record_id | references | foreign_key: true              |
+| purchase_record    | references | foreign_key: true              |
 
 ### Association
 
