@@ -23,8 +23,7 @@
 | Column           | Type       | Options                         |
 | ---------------- | ---------- | ------------------------------- |
 | user             | references | null: false, foreign_key: true  |
-| image            |            | null: false                     |
-| price_id         | integer    | null: false                     |
+| price            | integer    | null: false                     |
 | shipping_cost_id | integer    | null: false                     |
 | category_id      | integer    | null: false                     |
 | status_id        | integer    | null: false                     |
