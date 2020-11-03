@@ -34,8 +34,8 @@
 
 ### Association
 
-- has_one :purchase_records
-- belongs_to :users
+- has_one :purchase_record
+- belongs_to :user
 
 ## purchase_records テーブル
 
@@ -46,20 +46,21 @@
 
 ### Association
 
-- belongs_to :items
-- belongs_to :users
-- has_one :user_addresses
+- belongs_to :item
+- belongs_to :user
+- has_one :user_address
 
 ## user_addresses テーブル
 
-| Column        | Type       | Options                        |
-| ------------  | ---------- | ------------------------------ |
-| postal_code   | string     | null: false                    |
-| prefecture    | integer    | null: false                    |
-| city          | string     |                                |
-| house_number  | string     |                                |
-| building_name | string     |                                |
-| phone_number  | references | null: false, foreign_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| postal_code        | string     | null: false                    |
+| prefecture         | integer    | null: false                    |
+| city               | string     |                                |
+| house_number       | string     |                                |
+| building_name      | string     |                                |
+| phone_number       | integer    | null: false, foreign_key: true |
+| purchase_record_id | references | foreign_key: true              |
 
 ### Association
 
