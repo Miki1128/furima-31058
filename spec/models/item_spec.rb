@@ -62,13 +62,13 @@ RSpec.describe Item, type: :model do
       end
       
       it"販売価格が¥300以下だと販売できない" do
-        @item.price = "299"
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
 
       it"販売価格が¥9,999,999以上だと販売できない" do
-        @item.price = "10000000"
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
@@ -78,6 +78,36 @@ RSpec.describe Item, type: :model do
        @item.valid?
        expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
+
+      it"---を選択すると登録できない" do
+       @item.category_id = "---"
+       @item.valid?
+       expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
+
+      it"---を選択すると登録できない" do
+        @item.status_id = "---"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Status can't be blank")
+       end
+
+       it"---を選択すると登録できない" do
+        @item.shipping_cost_id = "---"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping cost can't be blank")
+       end
+ 
+       it"---を選択すると登録できない" do
+        @item.prefecture_id = "---"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+       end
+       
+       it"---を選択すると登録できない" do
+        @item.shipping_day_id = "---"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping day can't be blank")
+       end
     end
   end
 end
