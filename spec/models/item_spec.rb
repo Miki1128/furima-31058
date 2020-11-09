@@ -80,31 +80,31 @@ RSpec.describe Item, type: :model do
       end
 
       it"---を選択すると登録できない" do
-       @item.category_id = "---"
+       @item.category_id = 0
        @item.valid?
        expect(@item.errors.full_messages).to include("Category can't be blank")
       end
 
       it"---を選択すると登録できない" do
-        @item.status_id = "---"
+        @item.status_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Status can't be blank")
        end
 
        it"---を選択すると登録できない" do
-        @item.shipping_cost_id = "---"
+        @item.shipping_cost_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping cost can't be blank")
        end
  
        it"---を選択すると登録できない" do
-        @item.prefecture_id = "---"
+        @item.prefecture_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
        end
        
        it"---を選択すると登録できない" do
-        @item.shipping_day_id = "---"
+        @item.shipping_day_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping day can't be blank")
        end
