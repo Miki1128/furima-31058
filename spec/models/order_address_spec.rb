@@ -8,6 +8,11 @@ RSpec.describe OrderAddress, type: :model do
       expect(@order_address).to be_valid
     end
 
+    it '建物名が空でも保存できる' do
+      @order_address.building_name = ''
+      expect(@order_address).to be_valid
+    end
+
     it '配送先の情報として、郵便番号がないと登録できない' do
       @order_address.postal_code = ''
       @order_address.valid?
